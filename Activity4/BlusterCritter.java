@@ -8,16 +8,12 @@ import info.gridworld.actor.Rock;
 import java.awt.Color;
 import java.util.ArrayList;
 
-/**
- * A <code>CrabCritter</code> looks at a limited set of neighbors when it eats and moves.
- * <br />
- * This class is not tested on the AP CS A and AB exams.
- */
+
 public class BlusterCritter extends Critter
 {
 	private int courage;
 	private int counter;
-	private static final double COLOR_FACTOR = 0.01;
+	private static final double COLOR_FACTOR = 0.05;
 	
 	public BlusterCritter(int courage)
 	{
@@ -68,7 +64,7 @@ public class BlusterCritter extends Critter
 			green = (int) (c.getGreen() * (1 + COLOR_FACTOR));
 			blue = (int) (c.getBlue() * (1 + COLOR_FACTOR));
 			setColor(new Color(red,green,blue));
-			//System.out.println("counter="+counter+"courage="+courage);
+			
 		}
 		else
 		{
@@ -76,7 +72,6 @@ public class BlusterCritter extends Critter
 			green = (int) (c.getGreen() * (1 - COLOR_FACTOR));
 			blue = (int) (c.getBlue() * (1 - COLOR_FACTOR));
 			setColor(new Color(red,green,blue));
-			//System.out.println("counter2="+counter+"courage="+courage);
 		}
 		counter=0;
     }
