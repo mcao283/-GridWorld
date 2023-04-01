@@ -11,14 +11,20 @@ public class Boulder extends Actor
 	
 	public Boulder ()
 	{
-		lifetime = Math.floor(Math.random() * (200) + 1);
-		super.setColor(null);
+		lifetime = (int)(Math.random() * (199) + 1);
+		if ( lifetime <= 3 )
+			super.setColor(Color.RED);
+		else
+			super.setColor(null);
 	}
 	
 	public Boulder(int lifetime)
 	{
 		this.lifetime = lifetime;
-		super.setColor(null);
+		if ( lifetime <= 3 )
+			super.setColor(Color.RED);
+		else
+			super.setColor(null);
 	}
 	
 	public void act()
@@ -26,7 +32,7 @@ public class Boulder extends Actor
 		Kaboom k = new Kaboom();
 		Grid<Actor> gr = getGrid();
 		Location loc = getLocation();
-		if(lifetime = 0)
+		if(lifetime == 0)
 		{
 			removeSelfFromGrid();
 			k.putSelfInGrid(gr,loc);

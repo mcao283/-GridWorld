@@ -18,7 +18,7 @@ public class Kaboom extends Actor
 	
 	public void act()
 	{
-		if(lifetime = 0)
+		if(lifetime == 0)
 			removeSelfFromGrid();
 		else
 			lifetime--;

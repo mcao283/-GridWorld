@@ -14,14 +14,20 @@ public class Stone extends Rock
 	
 	public Stone ()
 	{
-		lifetime = Math.floor(Math.random() * (200) + 1);
-		super.setColor(null);
+		lifetime = (int)(Math.random() * 199 + 1);
+		if ( lifetime <= 3 )
+			super.setColor(Color.GREEN);
+		else
+			super.setColor(null);
 	}
 	
 	public Stone(int lifetime)
 	{
 		this.lifetime = lifetime;
-		super.setColor(null);
+		if ( lifetime <= 3 )
+			super.setColor(Color.GREEN);
+		else
+			super.setColor(null);
 	}
 	
 	public void act()
@@ -29,7 +35,7 @@ public class Stone extends Rock
 		Boulder b = new Boulder();
 		Grid<Actor> gr = getGrid();
 		Location loc = getLocation();
-		if(lifetime = 0)
+		if(lifetime == 0)
 		{
 			removeSelfFromGrid();
 			b.putSelfInGrid(gr,loc);
